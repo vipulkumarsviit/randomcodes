@@ -1,0 +1,16 @@
+Could not find or load main class cassandra\apache-cassandra-3.11.2\conf\hotspot_compiler
+=========================================================================================
+
+Seems like there is a bug in cassandra`s cassandra-env.ps1 script. 
+Open cassandra-env.ps1 present under cassandra_home/conf and check line number 380 where it is setting up JVM_OPTS.
+
+This trick worked for me when I replace line here 
+
+From: $env:JVM_OPTS = "$env:JVM_OPTS -XX:CompileCommandFile=$env:CASSANDRA_CONF\hotspot_compiler"
+To: $env:JVM_OPTS = "$env:JVM_OPTS -XX:CompileCommandFile=""$env:CASSANDRA_CONF\hotspot_compiler"""
+
+At other places this case was well handled.
+
+Below is the issue link created to get this fix in the future releases.
+
+https://issues.apache.org/jira/browse/CASSANDRA-14418
