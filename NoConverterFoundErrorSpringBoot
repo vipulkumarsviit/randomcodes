@@ -1,0 +1,80 @@
+Problem
+=========
+
+@SpringBootApplication
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+}
+
+@RestController
+@RequestMapping("/product")
+public class ProductController {
+
+	@Autowired
+	ProductService productService;
+
+	@GetMapping("/product")
+	public ResponseEntity<ProductBean> getProduct() {
+		return new ResponseEntity<ProductBean>(productService.getProduct(), HttpStatus.OK);
+
+	}
+}
+
+@Service
+public class ProductService {
+
+	public ProductBean addProduct(ProductBean product) {
+
+		return null;
+	}
+
+	public ProductBean getProduct() {
+
+		return new ProductBean("1", "Product 1", "123");
+	}
+
+}
+
+public class ProductBean {
+
+	String id;
+	String name;
+	String price;
+
+	public ProductBean(String id, String name, String price) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
+
+
+	protected void setId(String id) {
+		this.id = id;
+	}
+
+
+	protected void setName(String name) {
+		this.name = name;
+	}
+
+
+	protected void setPrice(String price) {
+		this.price = price;
+	}
+}
+
+
+http://localhost:8080/solr/product
+
+Failed to write HTTP message: org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of
+
+type: class com.example.demo.ProductBean
+
+
+Solution
+===========
+
+Add Getter method
