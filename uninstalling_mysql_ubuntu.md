@@ -1,4 +1,4 @@
-### Uninstalling Ubuntu
+### Uninstalling MySQL from Ubuntu
 
 `sudo apt-get remove --purge mysql*`
 
@@ -13,6 +13,6 @@
 `sudo apt-get dist-upgrade`
 
 
-### Installing MySQL
+### Installing MySQL in Ubuntu
 
 `sudo apt-get install mysql-server`
