@@ -9,3 +9,4 @@
 - [Place Details by Pincode](https://api.postalpincode.in/pincode/560017)
 - [Java Encryption/Decryption & JavaScript Decryption/Decryption Using AES Algorithm](/encryption.md)
 - [How to pull changes from forked branch to you local](/git_pull_from_forked_branch.md)
+- [How to Add Application Shortcuts on Ubuntu Desktop](/desktop_shortcut_in_ubuntu.md)
